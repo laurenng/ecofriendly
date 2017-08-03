@@ -23,36 +23,16 @@
   <body style = "background:#f7fff8">
 <body>
 
-  <button onclick="document.getElementById('signin').style.display='block'" style="width:auto;">Login</button>
-  <div id="signin" class="modal">
-
-    <form class="modal-content animate" action="/action_page.php">
-      <div class="imgcontainer">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      </div>
-
-      <div class="container">
-        <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
-
-        <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-
-        <button type="submit">Login</button>
-      </div>
-
-      </div>
-    </form>
-  </div>
 
 
-<!-- jumbotron top part thing-->
+
+<!-- jumbotron top part thing
   <div class="jumbotron jumbotron-fluid" style="background:url(sunset.jpg) center; background-size: 100% auto; height:200px">
     <div class="container">
       <h1 style= "color:black; font-family: 'Amatic SC', cursive; font-size:100px"><center> </center></h1>
     </div>
   </div>
-
+-->
 <!-- menu drop down menu thing-->
   <div class="dropdown">
     <button onclick="myFunction()" class="dropbtn">
@@ -141,17 +121,38 @@
 </div>
 
 <div class="parentDiv" id="bottomRow">
-  <div class="childDiv" id="BLeft"><h><center>News</center></h>
-     <p> news and stuff
-     </p>
+  <div class="childDiv" id="BLeft"><h><center>Facts</center></h>
+     <p>Since the Industrial Revolution, worldwide use of fossil fuels has skyrocketed.</p>
+
+     <p>The biggest person behind the rise of climate change was Thomas Midgeley Jr. (1889-1944), who developed leaded gasoline (made by adding tetraethyllead (TEL), to gasoline)
+     The gasoline proved to be popular with car companies, who started using it widely. Eventually the negative health effects of the gasoline were discovered, and eventually
+     leaded gasoline is banned in most parts of the world.</p>
+
+     <p>Midgeley also worked on the first chloroflurocarbon (CFC), dichlorodifluromethane ("Freon") for use as a refrigerant. CFCs are now linked to ozone depletion.</p>
+
+     <p>The ozone layer is in the stratosphere, protecting Earth from harmful ultraviolet rays from the sun.</p>
+
+     <p>Ozone depletion means that there is more UV radiation leaking into earth. The health risks are</p> <a href="http://enhs.umn.edu/current/5103/uv/harmful.html" class="topic">many</a><p>.</p>
+
+     <p>Three quarters of the Earth is covered with water. 98% of it is undrinkable.</p>
+
+     <p>The average American household uses 176 gallons of water per day.</p>
+
+     <p>The North Pole's icebergs are melting as time goes on due to warming caused by fossil fuels.</p>
+
+
   </div>
-  <div class="childDiv" id="BMiddle"><h><center>Links</center></h>
-      <p>links and stuff
+  <div class="childDiv" id="BMiddle"><h><center>Videos</center></h>
+      <p><iframe width="240" height="240" src="https://www.youtube.com/embed/bCVXnrQfzgA"></iframe>
+      <iframe width="240" height="240" src="https://www.youtube.com/embed/e6ECtZCeqwE"></iframe>
       </p>
   </div>
   <div class="childDiv" id="BRight"><h><center>Charts</center></h>
-    <p>Charsta nd stuff
+    <p>
+      (Open in new tab) All graphs from <a href="https://climate.nasa.gov">NASA</a>
     </p>
+    <img src="carbongraph.jpg" alt="carbongraph" width="300px" height="300px">
+    <img src="earthtemp.jpg" alt="earthtemp" width="300px" height="300px">
   </div>
 </div>
 
@@ -168,6 +169,9 @@ toggle between hiding and showing the dropdown content */
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
+
+// log in JAVASCRIPT
+
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
@@ -199,6 +203,7 @@ $(window).scroll(function(){
           modal.style.display = "none";
       }
   }
+
 
 </script>
 
