@@ -17,26 +17,50 @@
     <link href="style.css" rel="stylesheet">
 
 </head>
-
+  <body style = "background:#b6Efcf">
 <body>
-  <h2>Here's our website :) </h2>
-
+<!-- Here's the code for the nav bar-->
   <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+    <button onclick="myFunction()" class="dropbtn">
+      <div class="menu"></div>
+      <div class="menu"></div>
+      <div class="menu"></div>
+    </button>
     <div id="myDropdown" class="dropdown-content">
-      <a href="timer.html">Timer</a>
       <a href="ecofriendly.html">Home</a>
+      <a href="timer.html">Timer</a>
       <a href="profile.html">Profile</a>
+      <a href="maps.html">Maps</a>
     </div>
   </div>
 
+
+
+  <body>
+    <h2><center>Shower Timer! </center></h2>
+    <body style="background-color:#b6efcf;">
+
+  <div class="timer">
+    <p id="output"></p>
+    <div id="controls">
+        <button id="startPause" onClick="startPause()">Start</button>
+        <button id="reset" onclick="reset()">Reset</button>
+    </div>
+    <br><br><br><br><br><br><br><br>
+    <h><center>If your under 5 minutes then your good! If your between 5-10 minutes
+      your in the yellow zone, your in danger of going to the red! If your over 10 then
+      your in the red zone, stop now!</center></h>
+  </div>
+
+</body>
+
+<!-- javascript for the navbar-->
   <script>
   /* When the user clicks on the button,
   toggle between hiding and showing the dropdown content */
   function myFunction() {
       document.getElementById("myDropdown").classList.toggle("show");
   }
-
   // Close the dropdown if the user clicks outside of it
   window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
@@ -51,10 +75,77 @@
       }
     }
   }
+
+
+  /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content
+  THIS IS THE TIMER JAVASCRIPT */
+  function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+  }
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+  var time=0;
+  var running=0;
+
+  function startPause(){
+    if(running==0){
+      running = 1;
+      increment();
+      document.getElementById("startPause").innerHTML="Pause";
+    }else{
+      running = 0;
+      document.getElementById("startPause").innerHTML="Resume";
+    }
+  }
+
+  function reset(){
+    running=0;
+    time=0;
+    document.getElementById("startPause").innerHTML="Start";
+    document.getElementById("output").innerHTML= "00:00:00";
+  }
+
+  function increment(){
+    if(running ==1){
+      setTimeout(function(){
+        time++;
+        var mins = Math.floor(time/10/60);
+        var secs = Math.floor(time/10 % 60);
+        var tenths = time % 10;
+
+        if(mins < 10){
+          mins= "0" + mins;
+        }
+        if(secs < 10){
+          secs = "0" + secs;
+        }
+
+        document.getElementById("output").innerHTML = mins + ":" + secs + ":" + "0" + tenths;
+
+
+        if(mins > 1 && mins < 10 ){
+          document.getElementById("output").style.backgroundColor = "yellow";
+        }
+        if(mins > 10){
+          document.getElementById("output").style.backgroundColor = "red";
+        }
+        increment();
+      },100);
+    }
+  }
   </script>
 
-  <h>this is the timer</h>
 
-
-</body>
 </html>

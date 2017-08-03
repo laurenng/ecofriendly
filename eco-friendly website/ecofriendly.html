@@ -14,48 +14,193 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet">
 
+    <link rel='shortcut icon' type='image/x-icon' href='icon.ico' />
+
 </head>
-
+  <body style = "background:#f7fff8">
 <body>
-  <h2>Clickable Dropdown</h2>
-  <p>Click on the button to open the dropdown menu.</p>
 
-  <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-    <div id="myDropdown" class="dropdown-content">
-      <a href="timer.html">Timer</a>
-      <a href="ecofriendly.html">Home</a>
-      <a href="profile.html">Profile</a>
+  <button onclick="document.getElementById('signin').style.display='block'" style="width:auto;">Login</button>
+  <div id="signin" class="modal">
+
+    <form class="modal-content animate" action="/action_page.php">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      </div>
+
+      <div class="container">
+        <label><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit">Login</button>
+      </div>
+
+      </div>
+    </form>
+  </div>
+
+
+<!-- jumbotron top part thing-->
+  <div class="jumbotron jumbotron-fluid" style="background:url(sunset.jpg) center; background-size: 100% auto; height:200px">
+    <div class="container">
+      <h1 style= "color:black; font-family: 'Amatic SC', cursive; font-size:100px"><center> </center></h1>
     </div>
   </div>
 
-  <script>
-  /* When the user clicks on the button,
-  toggle between hiding and showing the dropdown content */
-  function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-  }
+<!-- menu drop down menu thing-->
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">
+      <div class="menu"></div>
+      <div class="menu"></div>
+      <div class="menu"></div>
+    </button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="ecofriendly.html">Home</a>
+      <a href="timer.html">Timer</a>
+      <a href="profile.html">Profile</a>
+      <a href="maps.html">Maps</a>
+    </div>
+  </div>
 
-  // Close the dropdown if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
 
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
-  }
-  </script>
+<div class="header">
+  <h><center>MAIN PAGEEE</center></h>
+</div>
 
-  <h>MAIN PAGEEE</h>
+<div class= "firstrow">
+  <div class="slideshow">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="deforestation.png" alt="Deforestation" style="width:100%;">
+          <div class="carousel-caption">
+              <h2>Deforestation</h2>
+              <p>In Southeast Asia, the average area deforested annually is more than 1 million hectares,
+                resulting in the release of hundreds of millions of tonnes of carbon dioxide every year between 2005 and 2015.</p>
+            </div>
+        </div>
+
+        <div class="item">
+          <div class="item active">
+            <img class="photing" src="extinction.jpg" alt="Extinction" style="width:100%;">
+            <div class="carousel-caption">
+                <h2>Extinction</h2>
+                <p>More than 1 million species have already faced extinction due to global
+                   warming. One Million. And a considerable number is under threat.</p>
+              </div>
+          </div>
+        </div>
+
+
+        <div class="item">
+          <img class="photing" src="potablewater.png" alt="Drinking Water" style="width:100%;">
+          <div class="carousel-caption">
+            <h3>It is estimated that about 30 percent of the population uses drinking water contaminated by human feces.</h3>
+            <p>The availability of fresh water is an important social justice issue,
+              and this increasingly becomes the case as fresh water supplies become more scarce.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <img class="photing" src="seacups.png" alt="Cans in the Sea" style="width:100%;">
+          <div class="carousel-caption">
+            <h4>Coral Reefs</h4>
+            <p>Due to global warming and pollution, coral reefs are suffering the worst bleaching with the highest dying record since 1980.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+  <img id="plant" src= "plant.png" alt="growing plant">
+</div>
+
+<div class="parentDiv" id="bottomRow">
+  <div class="childDiv" id="BLeft"><h><center>News</center></h>
+     <p> news and stuff
+     </p>
+  </div>
+  <div class="childDiv" id="BMiddle"><h><center>Links</center></h>
+      <p>links and stuff
+      </p>
+  </div>
+  <div class="childDiv" id="BRight"><h><center>Charts</center></h>
+    <p>Charsta nd stuff
+    </p>
+  </div>
+</div>
+
+
+
+
 
 
 </body>
+<!--BELOW IS JAVASCRIPT STUFF SO YA-->
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+//  sign in stuff
+// for the jumbotron scrolling feature
+$(window).scroll(function(){
+    $(".jumbotron.jumbotron-fluid").css("opacity", 1 - $(window).scrollTop() / 250);
+  });
+
+  // Get the modal
+  var modal = document.getElementById('signin');
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+
+</script>
+
+
 </html>

@@ -1,22 +1,45 @@
 <style>
+
+/* jumbotron thing*/
+.jumbotron.jumbotron-fluid h1{
+  float: center;
+  font-family: 'Acme', sans-serif;
+  font-size: 20px;
+  color:blue;
+}
+
+
+/* top part of the header and stuff*/
+.header h{
+  font-size: 45px;
+
+}
+/* the nav bar drop down menu*/
 .dropbtn {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #60bab1;
+    color: #2b6d6c;
     padding: 16px;
-    font-size: 16px;
+    font-size: 20px;
     border: none;
     cursor: pointer;
+    border-radius: 40px;
 }
-
+/*the 3 dashs in the menu thing*/
+.menu{
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+  border-radius: 40px
+}
+/*hover color */
 .dropbtn:hover, .dropbtn:focus {
-    background-color: #3e8e41;
+    background-color: #2b9187;
 }
-
 .dropdown {
     position: relative;
     display: inline-block;
 }
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -26,15 +49,252 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-
 .dropdown-content a {
-    color: black;
+    color: blue;
+    font-size: 20px;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
-
 .dropdown a:hover {background-color: #f1f1f1}
-
 .show {display:block;}
+/*end of the nav bar menu*/
+
+.firstrow{
+  display:inline-block;
+  float:right;
+}
+/*slideshow stuff*/
+.slideshow{
+  height:500px;
+  width:50%;
+  float:left;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.slideshow h1{
+  color: #215b5a;
+  font-size: 30px;
+}
+.slideshow #photing{
+  height: 400px;
+  width: 400px;
+}
+.item{
+  height:500px;
+  width:700px;
+}
+/*flower plant on the top right*/
+#plant{
+  height:500px;
+  width:25%;
+  float:right;
+}
+
+
+/* the 3 purple squares*/
+  .childDiv{
+    display:inline-block;
+  }
+  .childDiv h{
+    font-family: 'Acme', sans-serif;
+    font-size: 32px;
+    color:#4c2770;
+  }
+  .childDiv p{
+    font-family: 'Boogaloo', cursive;
+    font-size: 15px;
+    color:black;
+  }
+  .childDiv li{
+    font-family: 'Boogaloo', cursive;
+    font-size: 15px;
+    color:black;
+  }
+  #BLeft{
+    background-color: white;
+    width: 300px;
+    height: 700px;
+    padding: 5px;
+    opacity: 0.8;
+    margin-left: 200px;
+  }
+  #BMiddle{
+    background-color: white;
+    width: 300px;
+    height: 500px;
+    padding: 5px;
+    opacity:0.8;
+  }
+  #BRight{
+    background-color: white;
+    width: 300px;
+    height: 500px;
+    padding: 5px;
+    opacity:0.8;
+    margin-right:100px;
+  }
+
+/* sign in page stuff*/
+  input[type=text], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+  }
+
+  /* Set a style for all buttons */
+  button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 2px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+  }
+
+  button:hover {
+      opacity: 0.8;
+  }
+
+  /* Extra styles for the cancel button */
+  .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+  }
+
+  /* Center the image and position the close button */
+  .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+  }
+
+  img.avatar {
+      width: 40%;
+      border-radius: 50%;
+  }
+
+  .container {
+      padding: 16px;
+  }
+
+  span.psw {
+      float: right;
+      padding-top: 16px;
+  }
+
+  /* The Modal (background) */
+  .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      padding-top: 60px;
+  }
+
+  /* Modal Content/Box */
+  .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+  /* The Close Button (x) */
+  .close {
+      position: absolute;
+      right: 25px;
+      top: 0;
+      color: #000;
+      font-size: 35px;
+      font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+      color: red;
+      cursor: pointer;
+  }
+
+  /* Add Zoom Animation */
+  .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+  }
+
+  @-webkit-keyframes animatezoom {
+      from {-webkit-transform: scale(0)}
+      to {-webkit-transform: scale(1)}
+  }
+
+  @keyframes animatezoom {
+      from {transform: scale(0)}
+      to {transform: scale(1)}
+  }
+
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+      span.psw {
+         display: block;
+         float: none;
+      }
+      .cancelbtn {
+         width: 100%;
+      }
+  }
+
+
+
+/* for the timer page!!!*/
+.timer{
+  background-color:
+}
+#output{
+  width: 400px;
+  height: 80px;
+  background-color: green;
+  border: 4px solid;
+  font-size: 40pt;
+  margin: auto;
+}
+#startPause{
+  margin: auto;
+}
+
+#controls{
+  text-align: center;
+  width:100%;
+  height:400px;
+  display:inline-block;
+}
+ #startPause{
+   float:left;
+   height:100px;
+   width:45%;
+ }
+ #reset{
+   float:right;
+   height: 100px;
+   width:45%
+ }
+#h2{
+  text-align: center;
+}
+
+#h{
+  float:left;
+}
 </style>
