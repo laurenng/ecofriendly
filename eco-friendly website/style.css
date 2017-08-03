@@ -60,6 +60,10 @@
 .show {display:block;}
 /*end of the nav bar menu*/
 
+#content, html, body {
+    height: 98%;
+}
+
 .firstrow{
   display:inline-block;
   float:right;
@@ -116,25 +120,28 @@
   #BLeft{
     background-color: white;
     width: 300px;
-    height: 700px;
+    height: 300px;
     padding: 5px;
     opacity: 0.8;
     margin-left: 200px;
+    overflow: scroll;
   }
   #BMiddle{
     background-color: white;
     width: 300px;
-    height: 500px;
+    height: 300px;
     padding: 5px;
     opacity:0.8;
+    overflow: scroll;
   }
   #BRight{
     background-color: white;
     width: 300px;
-    height: 500px;
+    height: 300px;
     padding: 5px;
     opacity:0.8;
     margin-right:100px;
+    overflow: scroll;
   }
 
 /* sign in page stuff*/
@@ -156,6 +163,7 @@
       border: none;
       cursor: pointer;
       width: 100%;
+      float:right;
   }
 
   button:hover {
