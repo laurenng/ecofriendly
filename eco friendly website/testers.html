@@ -1,0 +1,104 @@
+<html>
+<head>
+  <title>E-Saver</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Josefin+Sans|Questrial|Rubik|Varela+Round" rel="stylesheet">
+    <link rel='shortcut icon' type='image/x-icon' href='e-saver.jpg' />
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Passion+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet">
+
+    <link href="style.css" rel="stylesheet">
+
+  <style>
+  body{
+    padding:0;
+  }
+  #nav {
+    height: 70px;
+    background: transparent; // Transparent initial setting
+    display: block;
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+    transition: all ease .5s;
+  }
+
+  #logo a{
+
+    color: white;
+    padding: 8px;
+    font-size: 18px;
+    transition: all ease .5s;
+  }
+#logo a:hover{
+  border-top: #737373;
+  text-decoration: none;
+}
+
+  #hero {
+    height: 500px;
+    width: 100%;
+    background: url('nav.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  #nav.shrink {
+    height: 40px;
+    transition: all ease .5s;
+    background: pink; // Change background to black on scroll
+    opacity:20%;
+  }
+
+  #nav.shrink #logo {
+    padding: 10px;
+    transition: all ease .5s;
+  }
+  </style>
+</head>
+
+<body>
+  <div id="nav">
+    <div id="logo">
+        <a href="ecofriendly.html">Home</a>
+        <a href="timer.html">Timer</a>
+        <a href="profile.html">Profile</a>
+        <a href="maps.html">Maps</a>
+        <a href="aboutus.html">About Us</a>
+
+    </div>
+  </div>
+
+  <div id="hero"></div>
+
+  <p>
+  Some dumby text goes here.
+  <br><br><br><br><br><br><br><br>
+  hadfads
+  </p>
+
+  <script>
+  $(document).ready(function() {
+  	$(window).scroll(function() {
+    	if($(document).scrollTop() > 10) {
+      	$('#nav').addClass('shrink');
+      }
+      else {
+      $('#nav').removeClass('shrink');
+      }
+    });
+  });
+  </script>
+</body>

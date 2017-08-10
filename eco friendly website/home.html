@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>E-saver</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <link rel='shortcut icon' type='image/x-icon' href='e-saver.jpg' />
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round|Faustina" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Josefin+Sans|Questrial|Rubik|Varela+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Glegoo" rel="stylesheet">
+    <style>
+
+        .parallax {
+            /* The image used */
+            background-image: url("headerphoto.jpg");
+            /* Set a specific height */
+            min-height:650px;
+            /*filter to change the color*/
+            filter: contrast(75%);
+            padding:0;
+
+            /* Create the parallax scrolling effect*/
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        body{
+          padding:0;
+        }
+        .parallax p{
+          padding:0;
+          text-align: center;
+          font-size: 60px;
+          color:#b6efcf;
+          width:100%;
+          font-family: 'Faustina', serif;
+
+        }
+        .after{
+          height:1200px;
+          background-color:white;
+          opacity: 1;
+          font-size:16px;
+          font-family: 'Josefin Sans', sans-serif;
+        }
+        #greenbox{
+          height:200px;
+          width:75%;
+          background-color: #496d41;
+          float:right;
+          padding: 20px;
+          margin:30px;
+        }
+
+        #greenbox h{
+          margin: 10px;
+          font-size:30px;
+          color:white;
+          font-family: 'Slabo 27px', serif;
+        }
+
+        #greenbox p{
+          margin:40px;
+          font-size:16px;
+          color:white;
+          font-family: 'Poppins', sans-serif;
+        }
+        #greenbox1{
+          height:200px;
+          width:75%;
+          background-color: #496d41;
+          float:left;
+          padding: 20px;
+          margin:30px;
+        }
+
+        #greenbox1 h{
+          margin: 10px;
+          font-size:30px;
+          color:white;
+          font-family: 'Slabo 27px', serif;
+        }
+
+        #greenbox1 p{
+          margin:40px;
+          font-size:16px;
+          color:white;
+          font-family: 'Poppins', sans-serif;
+        }
+        #otherbox{
+          height:200px;
+          width:100%;
+          background-color: #e2e1d7;
+          float:left;
+        }
+
+
+        #otherbox p{
+          margin:20px;
+          font-size:37px;
+          text-align: center;
+          color:black;
+          font-family: 'Poppins', sans-serif;
+          font-family: 'Glegoo', serif;
+        }
+        #bottominfo{
+          height:250px;
+          width:100%;
+          background-color:#496d41;
+        }
+
+        #bottominfo h{
+          font-family: 'Noto Serif', serif;
+          font-size:20px;
+          color:white;
+        }
+        .namezz{
+          font-family: 'Noto Serif', serif;
+          font-size: 20px;
+          color:white;
+        }
+    </style>
+
+</head>
+  <body style = "background:white">
+<body>
+  <div class="parallax">
+
+<button onclick="document.getElementById('signin').style.display='block'" style="width:auto;">Sign in</button>
+
+<!--quote on main page-->
+    <br><br><br><br><br><br><br>
+      <p><i>"Climate change is no longer some
+        far-off problem; it is happening here, it is happeing now"- Barack Obama</i></p>
+
+        <!--login button-->
+
+                <div id="signin" class="modal">
+
+                  <form class="modal-content animate" >
+                    <div class="imgcontainer">
+                      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                      <img src="LOGOFINAL.png" alt="Avatar"class="avatar">
+                    </div>
+
+
+                    <div class="container">
+                      <p>log in to E-saver</p>
+                      <label><b>Username</b></label>
+                      <input type="text" placeholder="Enter Username" name="uname" required>
+
+                      <label><b>Password</b></label>
+                      <input type="password" placeholder="Enter Password" name="psw" required>
+
+                      <button type="submit" onclick="check(this.form)" id="submitt">Login</button>
+                    </div>
+
+                    </div>
+                  </form>
+                </div>
+
+  </div>
+
+  <div class="after">
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="http://saveourwater.com/">
+        <img src="fall.jpg" alt="" width="300" height="200">
+      </a>
+      <div class="desc">Water is used to make every product on Earth. Therefore,
+                        all businesses depend on it in some way</div>
+    </div>
+  </div>
+
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="https://www.livescience.com/27692-deforestation.html">
+        <img src="landscape.jpg" alt="Forest" width="600" height="400">
+      </a>
+      <div class="desc">More than 20 percent of the Amazon rainforest
+        is already gone, and much more is severely threatened as the
+        destruction continues. </div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="http://www.theworldcounts.com/stories/Ice-Cap-Melting-Facts">
+        <img src="mountains.jpg" alt="Northern Lights" width="600" height="400">
+      </a>
+      <div class="desc">According to scientists at the U.S Center for Atmospheric Research,
+        if the current rate of global temperature rise continues, the Arctic will be free of
+        Ice by 2040.</div>
+    </div>
+  </div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="http://news.nationalgeographic.com/news/2014/05/140529-conservation-science-animals-species-endangered-extinction/">
+        <img src="animal.jpg" alt="Mountains" width="600" height="400">
+      </a>
+      <div class="desc">Species Extinction Happening 1,000 Times Faster Because of Humans</div>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div id="greenbox">
+    <h>What is Climate Change?</h>
+    <p>Climate change is a change in the typical
+      or average weather of a region or city. It has
+      massive effects on
+      </p>
+  </div>
+
+  <!--<img id="grandcanyon" src="canyon.jpg" alt="grand canyon">-->
+  <div id="otherbox">
+    <p>"Change is the law of life. And those who look
+      only to the past or present are certain to miss
+      the future"<br>- John F Kennedy
+      </p>
+  </div>
+
+
+  <div id="greenbox1">
+    <h>Small Changes add up!</h>
+    <p>If everyone took a 5 minute shower in California,
+      we'd save over 200 billion gallons annually!
+      </p>
+  </div>
+</div>
+
+<div id="bottominfo">
+  <br><br>
+
+  <div class="container">
+    <h2 style= "text-align:center; color:white;">Contact Us</h2>
+  </div>
+    <div class= "contact">
+      <div class="col-sm-4">
+          <div class= "caption" style="text-align: center; font-size: 20px;background-color:#496d41;">
+            <p class="namezz">Lauren</p>
+            <a href=" https://www.linkedin.com/in/lauren-ng-272197145/"><img src="linkedin.png" style="width:50px; height:50px;"></a>
+          </div>
+      </div>
+      <div class="col-md-4">
+
+          <div class= "caption" style="text-align: center; font-size: 20px;background-color:#496d41;">
+            <p class="namezz">Riana</p>
+            <a href=" https://www.linkedin.com/in/riana-patel-532183142/"><img src="linkedin.png" style="width:50px; height:50px;"></a>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class= "caption" style="text-align: center; font-size: 20px;background-color:#496d41;">
+            <p class="namezz">Sophia</p>
+            <a href=" https://www.linkedin.com/in/sophia-c-812885142/"><img src="linkedin.png" style="width:50px; height:50px;"></a>
+          </div>
+       </div>
+     </div>
+  </div>
+
+
+
+
+
+</body>
+<!--BELOW IS JAVASCRIPT STUFF SO YA-->
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// log in JAVASCRIPT
+function check(form) { /*function to check userid & password*/
+    /*the following code checkes whether the entered userid and password are matching*/
+    if(form.uname.value == "Lauren" && form.psw.value == "password") {
+        window.open("ecofriendly.html");/*opens the target page while Id & password matches*/
+    }
+    else {
+        alert("Error Password or Username")/*displays error message*/
+    }
+}
+
+
+//  sign in stuff
+
+  // Get the modal
+  var modal = document.getElementById('signin');
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+
+
+</script>
+
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Eco-Friendly Website</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags-->
+    <link href="style.css" rel="stylesheet">
+
+</head>
+  <body style = "background:#7c8c6d">
+
+
+<!-- Here's the code for the nav bar-->
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">menu</button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="ecofriendly.html">Home</a>
+      <a href="timer.html">Timer</a>
+      <a href="profile.html">Profile</a>
+      <a href="maps.html">Maps</a>
+    </div>
+  </div>
+
+  <div id="map"></div>
+<!--makes a button to display some markers... get button and connect it with
+add marker function... but its not working-->
+  <button onclick="helloworld()">Click me</button>
+  <p id="demo"></p>
+
+
+  <script>
+
+//var map = new google.maps.Map(document.getElementById('map'), options);
+
+  function initMap() {
+    //map options
+    var options= {
+      center: {lat:37.7272,lng:-122.02},
+      zoom: 10,
+    }
+      //new map
+    var map = new google.maps.Map(document.getElementById('map'), options);
+
+    //icon changer stuff
+    //recycling icon
+    var recycleicon = {
+      url: "recyclingmarker.png", // url
+      scaledSize: new google.maps.Size(30,50), // scaled size
+      origin: new google.maps.Point(0,0), // origin
+      anchor: new google.maps.Point(0, 0) // anchor
+    };
+    //farmers market icon stuff
+    var Marketicon = {
+      url: "marketmarker.png", // url
+      scaledSize: new google.maps.Size(70,70), // scaled size
+      origin: new google.maps.Point(0,0), // origin
+      anchor: new google.maps.Point(50, 50) // anchor
+    };
+
+    var Trailicon = {
+      url: "trailmarker.png", // url
+      scaledSize: new google.maps.Size(70,70), // scaled size
+      origin: new google.maps.Point(0,0), // origin
+      anchor: new google.maps.Point(0, 0) // anchor
+    };
+
+    //array of markers
+    var markers=[
+      //Farmers Market needs a basket symbol!!!
+      {
+        coords: {lat:37.729672,lng:-122.479089},
+        iconImage:Marketicon,
+        content:'<h1>Stonestown Farmers Market</h1>'
+      },
+      {
+        coords: {lat:37.795398,lng:-122.393699},
+        content:'<h1>Stonestown Farmers Market</h1>',
+        iconImage:Marketicon
+      },
+      {
+        coords: {lat: 37.597076,lng:-122.078722},
+        content:'<h1>Union City Farmers Market</h1>',
+        iconImage:Marketicon
+      },
+      //recycling symbol!!!
+      {
+        coords: {lat: 37.745115,lng:-122.403200},
+        content:'<h1>rePLANET Recycling(bottles)</h1>',
+        iconImage: recycleicon
+      },
+      {
+        coords: {lat: 37.699353,lng:-122.481609},
+        content:'<h1>rePLANET Recycling(bottles)</h1>',
+        iconImage: recycleicon
+      },
+      {
+        coords: {lat:37.719935,lng:-122.438977},
+        content:'<h1>Safeway(plastic bags)</h1>',
+        iconImage: recycleicon
+      },
+      //trails are below :
+      {
+        coords: {lat:37.695610,lng:-122.433485},
+        content:'<h1>San Mateo Mountain Summit Loop</h1>',
+        iconImage: Trailicon
+      },
+      {
+        coords: {lat:37.766526,lng:-122.478253},
+        content:'<h1>Golden Gate Park</h1>',
+        iconImage: Trailicon
+      }
+    ];
+
+
+    //loop through markers
+    //for(var i =0;i<markers.length;i++){
+      //addMarker(markers[i]);
+    //}
+
+
+
+  // addMarker(markers[2]);
+    //Add Marker function basically the cookie cutter function
+
+
+    }
+
+    function addMarker(props){
+      document.getElementById("demo").innerHTML = "Hello World";
+      var options= {
+        center: {lat:37.7272,lng:-122.02},
+        zoom: 10,
+      }
+      var map = new google.maps.Map(document.getElementById('map'), options);
+
+      var marker= new google.maps.Marker({
+        position:props.coords,
+        map:map,
+        //icon:props.iconImage
+      });
+      //check for custom icon
+      if(props.iconImage){
+        //set icon image
+        marker.setIcon(props.iconImage);
+      }
+      // check content
+      if(props.content){
+        var infoWindow = new google.maps.InfoWindow({
+          content:props.content
+        });
+
+        marker.addListener('click',function(){
+          infoWindow.open(map,marker);
+        });
+      }
+    }
+
+    function helloworld() {
+      var recycleicon = {
+        url: "recyclingmarker.png", // url
+        scaledSize: new google.maps.Size(30,50), // scaled size
+        origin: new google.maps.Point(0,0), // origin
+        anchor: new google.maps.Point(0, 0) // anchor
+      };
+      //farmers market icon stuff
+      var Marketicon = {
+        url: "marketmarker.png", // url
+        scaledSize: new google.maps.Size(70,70), // scaled size
+        origin: new google.maps.Point(0,0), // origin
+        anchor: new google.maps.Point(50, 50) // anchor
+      };
+
+      var Trailicon = {
+        url: "trailmarker.png", // url
+        scaledSize: new google.maps.Size(70,70), // scaled size
+        origin: new google.maps.Point(0,0), // origin
+        anchor: new google.maps.Point(0, 0) // anchor
+      };
+
+
+        var markers=[
+          //Farmers Market needs a basket symbol!!!
+          {
+            coords: {lat:37.729672,lng:-122.479089},
+            iconImage:Marketicon,
+            content:'<h1>Stonestown Farmers Market</h1>'
+          },
+          {
+            coords: {lat:37.795398,lng:-122.393699},
+            content:'<h1>Stonestown Farmers Market</h1>',
+            iconImage:Marketicon
+          },
+          {
+            coords: {lat: 37.597076,lng:-122.078722},
+            content:'<h1>Union City Farmers Market</h1>',
+            iconImage:Marketicon
+          },
+          //recycling symbol!!!
+          {
+            coords: {lat: 37.745115,lng:-122.403200},
+            content:'<h1>rePLANET Recycling(bottles)</h1>',
+            iconImage: recycleicon
+          },
+          {
+            coords: {lat: 37.699353,lng:-122.481609},
+            content:'<h1>rePLANET Recycling(bottles)</h1>',
+            iconImage: recycleicon
+          },
+          {
+            coords: {lat:37.719935,lng:-122.438977},
+            content:'<h1>Safeway(plastic bags)</h1>',
+            iconImage: recycleicon
+          },
+          //trails are below :
+          {
+            coords: {lat:37.695610,lng:-122.433485},
+            content:'<h1>San Mateo Mountain Summit Loop</h1>',
+            iconImage: Trailicon
+          },
+          {
+            coords: {lat:37.766526,lng:-122.478253},
+            content:'<h1>Golden Gate Park</h1>',
+            iconImage: Trailicon
+          }
+        ];
+
+        addMarker(markers[1]);
+        addMarker(markers[2]);
+
+      /*  for(var i =0;i<markers.length;i++){
+          console.log(i);
+          addMarker(markers[i]);
+        }*/
+    }
+
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWl_nPK6w1aPledYAy_ZsdRoBTbgQNnRg&callback=initMap">
+  </script>
+
+
+</body>
+
+<!-- javascript for the navbar-->
+  <script>
+  /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+  function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+  }
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+  </script>
+
+
+</html>

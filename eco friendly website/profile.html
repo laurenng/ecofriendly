@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Josefin+Sans|Questrial|Rubik|Varela+Round" rel="stylesheet">
+
+    <link href="style.css" rel="stylesheet">
+  <link rel='shortcut icon' type='image/x-icon' href='e-saver.jpg' />
+</head>
+  <body style = "background:#b6Efcf">
+<body>
+
+  <div class="nav">
+    <div class="logo">
+        <a href="ecofriendly.html">Home</a>
+        <a href="timer.html">Timer</a>
+        <a href="profile.html">Profile</a>
+        <a href="maps.html">Maps</a>
+        <a href="aboutus.html">About Us</a>
+    </div>
+  </div>
+
+<div class="hero"></div>
+
+
+  <h><center>Your Profile!</center></h>
+    <h1><center>Set up your profile to start growing your tree!<center><h1>
+    <div class="line">
+      <img src="tree_grows.gif">
+          <div id="answers" style="display:none">
+          <p> Name: <span id="nameText"></span> </p>
+          <p> Recycling: <span id="recycleText"></span> </p>
+          <p> Shower Time: <span id="showerText"></span> </p>
+          <p> Meat Consumtion: <span id="meatText"></span> </p>
+          <p>Phone Usage Time: <span id="phoneText"></span> </p>
+        </div>
+    </div>
+    <div class="profilesetup">
+       <form  action="#" method="post" >
+         <table>
+           <tr>
+             <td> First Name:</td>
+             <td><input type ="text" name="first" id="nameForm"/></td>
+           </tr>
+           <tr>
+             <td>How often do you recycle on a weekly basis?</td>
+             <td>
+               <input type="radio" value ="Not often" name="recycle" class="recycleForm"> Not Often
+               <input type="radio" value ="Sometimes" name="recycle" class="recycleForm">Sometimes
+                <input type="radio" value ="Every Week" name="recycle" class="recycleForm">Every Week
+              </td>
+           </tr>
+           <tr>
+             <td>How long are the showers you take on a daily basis?</td>
+             <td>
+               <input type="radio" value ="Under 5 minutes" name="shower" class="showerForm"> Under 5 minutes
+               <input type="radio" value ="Between 5-15 minutes" name="shower" class="showerForm">Between 5-15 minutes
+                <input type="radio" value ="Over 15 minutes" name="shower" class="showerForm">Over 15 minutes
+              </td>
+           </tr>
+           <tr>
+           <td>How much meat do you consume on a daily basis?</td>
+           <td>
+             <input type="radio" value =" Under 90 grams of meat" name="meat" class="meatForm"> Under 90 grams of meat
+             <input type="radio" value ="Between 90-125 grams of meat" name="meat" class="meatForm">Between 90-120 grams of meat
+              <input type="radio" value ="Over 120 grams of meat" name="meat" class="meatForm">Over 120 grams of meat
+            </td>
+         </tr>
+         <tr>
+         <td>How much time do you think you spend on your phone a day?</td>
+         <td>
+           <input type="radio" value ="Under 2.5 hours " name="phone" class="phoneForm">  Under 2.5 hours
+           <input type="radio" value ="Between 2.5-4.5 hours" name="phone" class="phoneForm">Between 2.5-4.5 hours
+            <input type="radio" value ="Over 4.5 hours" name="phone" class="phoneForm">Over 4.5 hours
+          </td>
+       </tr>
+         </table>
+         </form>
+     <button type="submit" name="Submit" onclick="submitbutton(); showdiv();">Submit</button>
+
+
+    </div>
+
+  <script>
+  function showdiv(){
+    document.getElementById("answers").style.display='';
+  }
+  function submitbutton(){
+    var n = document .getElementById("nameForm").value;
+  document.getElementById("nameText").innerHTML = n;
+
+  var r = document.getElementsByClassName("recycleForm");
+  for(i=0; i<r.length; i++){
+    if(r[i].checked == true){
+      document.getElementById("recycleText").innerHTML = r[i].value;
+  var s = document.getElementsByClassName("showerForm");
+    for(i=0; i<s.length; i++){
+      if(s[i].checked == true){
+      document.getElementById("showerText").innerHTML = s[i].value;
+      var m = document.getElementsByClassName("meatForm");
+        for(i=0; i<m.length; i++){
+          if(m[i].checked == true){
+          document.getElementById("meatText").innerHTML = m[i].value;
+          var p = document.getElementsByClassName("phoneForm");
+            for(i=0; i<p.length; i++){
+              if(p[i].checked == true){
+              document.getElementById("phoneText").innerHTML = p[i].value;
+      }
+      }
+  }
+  }
+  }
+  }
+  }
+  }
+  }
+
+  $(document).ready(function() {
+    $(window).scroll(function() {
+      if($(document).scrollTop() > 10) {
+        $('.nav').addClass('shrink');
+      }
+      else {
+      $('.nav').removeClass('shrink');
+      }
+    });
+  });
+  </script>
+
+
+  </body>
+  </html>

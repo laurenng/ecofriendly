@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Maps</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags-->
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bad+Script|Libre+Franklin" rel="stylesheet">
+
+    <style>
+    #legend {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      padding: 10px;
+      margin: 10px;
+      border: 3px solid #000;
+    }
+    #legend h3 {
+      margin-top: 0;
+    }
+    #legend img {
+      vertical-align: middle;
+    }
+
+    #hero p {
+      font-size:30px;
+      font-family: 'Libre Franklin', sans-serif;
+      color:blue;
+    }
+    </style>
+</head>
+  <body style="background-color:#cbf4e4;">
+
+<div class="nav">
+  <div class="logo">
+      <a href="ecofriendly.html">Home</a>
+      <a href="timer.html">Timer</a>
+      <a href="profile.html">Profile</a>
+      <a href="maps.html">Maps</a>
+      <a href="aboutus.html">About Us</a>
+  </div>
+</div>
+
+<div class="hero"></div>
+<p><center>Need help starting a sustainable lifestyle</center></p>
+
+  <div id="map"></div>
+
+  <script>
+  var map;
+  var chicago = {lat: 37.7749, lng: -122.4194};
+
+
+  function CenterControl(controlDiv, map) {
+
+    // Set CSS for the control border.
+    var controlUI = document.createElement('div');
+    controlUI.style.backgroundColor = '#fff';
+    controlUI.style.border = '2px solid #fff';
+    controlUI.style.borderRadius = '3px';
+    controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+    controlUI.style.cursor = 'pointer';
+    controlUI.style.marginBottom = '22px';
+    controlUI.style.textAlign = 'center';
+    controlUI.title = 'Click to recenter the map';
+    controlDiv.appendChild(controlUI);
+
+    // Set CSS for the control interior.
+    var controlText = document.createElement('div');
+    controlText.style.color = 'rgb(25,25,25)';
+    controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+    controlText.style.fontSize = '16px';
+    controlText.style.lineHeight = '38px';
+    controlText.style.paddingLeft = '5px';
+    controlText.style.paddingRight = '5px';
+    controlText.innerHTML = 'Center Map';
+    controlUI.appendChild(controlText);
+
+    // Setup the click event listeners: simply set the map to Chicago.
+    controlUI.addEventListener('click', function() {
+      map.setCenter(chicago);
+      addMarker(markers[3]);
+    });
+
+  }
+
+  function initMap() {
+    //map options
+    var options= {
+      center: {lat:37.7272,lng:-122.02},
+      zoom: 10,
+    }
+      //new map
+    var map = new google.maps.Map(document.getElementById('map'), options);
+
+    //icon changer stuff
+    //recycling icon
+    var recycleicon = {
+      url: "recyclingmarker.png", // url
+      scaledSize: new google.maps.Size(30,50), // scaled size
+      origin: new google.maps.Point(0,0), // origin
+      anchor: new google.maps.Point(0, 0) // anchor
+    };
+    //farmers market icon stuff
+    var Marketicon = {
+      url: "marketmarker.png", // url
+      scaledSize: new google.maps.Size(70,70), // scaled size
+      origin: new google.maps.Point(0,0), // origin
+      anchor: new google.maps.Point(50, 50) // anchor
+    };
+
+    var Trailicon = {
+      url: "trailmarker.png", // url
+      scaledSize: new google.maps.Size(70,70), // scaled size
+      origin: new google.maps.Point(0,0), // origin
+      anchor: new google.maps.Point(0, 0) // anchor
+    };
+
+    //array of markers
+    var markers=[
+      //Farmers Market needs a basket symbol!!!
+      {
+        coords: {lat:37.729672,lng:-122.479089},
+        iconImage:Marketicon,
+        content:'<h1>Stonestown Farmers Market</h1>'
+      },
+      {
+        coords: {lat:37.795398,lng:-122.393699},
+        content:'<h1>Stonestown Farmers Market</h1>',
+        iconImage:Marketicon
+      },
+      {
+        coords: {lat: 37.597076,lng:-122.078722},
+        content:'<h1>Union City Farmers Market</h1>',
+        iconImage:Marketicon
+      },
+      //recycling symbol!!!
+      {
+        coords: {lat: 37.745115,lng:-122.403200},
+        content:'<h1>rePLANET Recycling(bottles)</h1>',
+        iconImage: recycleicon
+      },
+      {
+        coords: {lat: 37.699353,lng:-122.481609},
+        content:'<h1>rePLANET Recycling(bottles)</h1>',
+        iconImage: recycleicon
+      },
+      {
+        coords: {lat:37.719935,lng:-122.438977},
+        content:'<h1>Safeway(plastic bags)</h1>',
+        iconImage: recycleicon
+      },
+      //trails are below :
+      {
+        coords: {lat:37.695610,lng:-122.433485},
+        content:'<h1>San Mateo Mountain Summit Loop</h1>',
+        iconImage: Trailicon
+      },
+      {
+        coords: {lat:37.766526,lng:-122.478253},
+        content:'<h1>Golden Gate Park</h1>',
+        iconImage: Trailicon
+      },
+      {
+        coords: {lat:37.5047306,lng:-122.2598998},
+        content: "<h1>San Carlos Farmers' Market</h1>",
+        iconImage: Marketicon
+      },
+      {
+        coords: {lat:37.518620,lng:-122.273809},
+        content: "<h1>Belmont Farmers' Market</h1>",
+        iconImage: Marketicon
+      },
+      {
+        coords: {lat:37.442567,lng:-122.172734},
+        content: "<h1>Sigona's Farmers' Market</h1>",
+        iconImage: Marketicon
+      },
+      {
+        coords: {lat:37.532067,lng:-122.340309},
+        content: "<h1>San Mateo Farmers' Market</h1>",
+        iconImage: Marketicon
+      },
+      {
+        coords: {lat:37.445454,lng:-122.158910},
+        content: "<h1>Downtown Palo Alto Farmer's Market</h1>",
+        iconImage: Marketicon
+      },
+      {
+        coords: {lat:37.577889,lng:-122.346556},
+        content: "<h1>Burlingame Farmers' Market</h1>",
+        iconImage: Marketicon
+      }
+    ];
+
+    for(var i =0;i<markers.length;i++){
+      addMarker(markers[i]);
+    }
+
+
+
+    addMarker(markers[1]);
+
+    //Add Marker function basically the cookie cutter function
+      function addMarker(props){
+        var marker= new google.maps.Marker({
+          position:props.coords,
+          map:map,
+          //icon:props.iconImage
+        });
+        //check for custom icon
+        if(props.iconImage){
+          //set icon image
+          marker.setIcon(props.iconImage);
+        }
+        // check content
+        if(props.content){
+          var infoWindow = new google.maps.InfoWindow({
+            content:props.content
+          });
+
+          marker.addListener('click',function(){
+            infoWindow.open(map,marker);
+          });
+        }
+      }
+
+
+/*function helloworld(){
+  work =1
+}*/
+// Create the DIV to hold the control and call the CenterControl()
+// constructor passing in this DIV.
+var centerControlDiv = document.createElement('div');
+var centerControl = new CenterControl(centerControlDiv, map);
+
+centerControlDiv.index = 1;
+map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
+}
+
+  </script>
+  <script>
+  $(document).ready(function() {
+    $(window).scroll(function() {
+      if($(document).scrollTop() > 10) {
+        $('.nav').addClass('shrink');
+      }
+      else {
+      $('.nav').removeClass('shrink');
+      }
+    });
+  });
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWl_nPK6w1aPledYAy_ZsdRoBTbgQNnRg&callback=initMap">
+  </script>
+
+
+</body>
+</html>
